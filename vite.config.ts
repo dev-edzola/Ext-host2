@@ -10,7 +10,7 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-  base: mode === 'production' ? 'Ext-host2/' : '/',
+  base: mode === 'production' ? '/Ext-host2/' : '/',
   plugins: [
     react(),
     {
