@@ -13,6 +13,13 @@ export default defineConfig(({ mode }) => ({
   base: mode === 'production' ? '/Ext-host2/' : '/',
   plugins: [
     react(),
+    {
+      name: 'add-nojekyll',
+      closeBundle() {
+        const distDir = path.resolve(__dirname, 'dist');
+        writeFileSync(path.join(distDir, '.nojekyll'), '');
+      },
+    },
     mode === 'development' &&
     componentTagger(),
     {
