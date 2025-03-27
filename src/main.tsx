@@ -4,7 +4,7 @@ import App from './App.tsx';
 import './index.css';
 
 createRoot(document.getElementById("root")!).render(
-  <BrowserRouter basename="/Ext-host2">
+  <BrowserRouter basename={import.meta.env.MODE === 'production' ? "/Ext-host2" : "/"}>
     <App />
   </BrowserRouter>
 );
